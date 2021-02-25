@@ -1,13 +1,6 @@
 const button = document.querySelector(".btn");
 const pTag = document.querySelector(".quotes");
-const buttonChoices = document.querySelectorAll(".btns")
-
-var select = document.querySelector('select');
-
-select.addEventListener('change', () => {
-    console.log(select.value)
-})
-
+const buttonChoices = document.querySelector("#btns")
 
 console.log(buttonChoices)
 console.log(button);
@@ -60,24 +53,20 @@ const mantras = ["Breathing in, I send myself love. Breathing out, I send love t
 "I am the sky, the rest is weather."]
 
  const buttonFunc = () => {
-    // const randomAffirmations = affirmations[Math.floor(Math.random() * affirmations.length)]
-    // const randomMantras = mantras[Math.floor(Math.random() * affirmations.length)]
+    const randomAffirmations = affirmations[Math.floor(Math.random() * affirmations.length)]
+    const randomMantras = mantras[Math.floor(Math.random() * mantras.length)]
 
-    if(select.value === "mantras"){
-        console.log("it worked")
+    if (document.querySelector('#btns1').checked) {
+        // It must be affirmations
+        pTag.innerHTML = randomAffirmations;
     }
-
-    // pTag.innerHTML = randomAffirmations;
-    // pTag.innerHTML = randomMantras;
+    if (document.querySelector('#btns2').checked) {
+        // It must be affirmations
+        pTag.innerHTML = randomMantras;
+    }
 
    
  }
 
-// if (buttonChoices && button){
-//         pTag.innerHTML = randomAffirmations;
-// }
-
-
 button.addEventListener('click', buttonFunc)
-// buttonChoices.addEventListener('click', buttonFunc)
-// buttonChoice.addEventListener('click', buttonFunc)
+
